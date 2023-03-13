@@ -1,17 +1,10 @@
-// Напиши скрипт, который реагирует на изменение значения input#font-size-control (событие input)
-// и изменяет инлайн - стиль span#text обновляя свойство font - size.В результате при перетаскивании
-//ползунка будет меняться размер текста.
+const rangeEl = document.querySelector("#font-size-control");
+const spanEl = document.querySelector("#text");
 
-// <input id="font-size-control" type="range" min="16" max="96" />
-// <br />
-// <span id="text">Abracadabra!</span>
+spanEl.style.fontSize = `${rangeEl.value}px`;
 
-const rangeEl = document.querySelector('#font-size-control')
-// console.log(rangeEl.valueAsNumber)
-const spanEl = document.querySelector('#text')
-// console.log(spanEl)
+rangeEl.addEventListener("input", onInputRange);
 
-rangeEl.addEventListener('input', onInputRange)
 function onInputRange(event) {
-    spanEl.style.fontSize =`${event.currentTarget.value}px`;
+  spanEl.style.fontSize = `${event.currentTarget.value}px`;
 }
