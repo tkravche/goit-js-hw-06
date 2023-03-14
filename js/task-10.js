@@ -29,4 +29,6 @@ function createBoxes(amount) {
 destroyButton.addEventListener("click", destroyBoxes);
 function destroyBoxes() {
   boxesDiv.innerHTML = "";
+  boxWidth = 20;
+  boxHeight = 20;
 }
